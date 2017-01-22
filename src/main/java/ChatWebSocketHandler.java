@@ -5,7 +5,7 @@ import org.eclipse.jetty.websocket.api.annotations.*;
 public class ChatWebSocketHandler {
 
     private String sender, msg;
-
+    private Cookies cookies = new Cookies();
     @OnWebSocketConnect
     public void onConnect(Session user) throws Exception {
         String username = "User" + Chat.nextUserNumber++;

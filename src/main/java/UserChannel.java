@@ -3,4 +3,7 @@
  */
 public class UserChannel extends Channel{
     //chanel craeted by user
+    public UserChannel(String userNameChannel){
+        super(userNameChannel);
+    }
 }
