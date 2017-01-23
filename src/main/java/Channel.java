@@ -32,9 +32,11 @@ public class Channel implements IChannel{
     }
 
     @Override
-    public void removeUser(Session session) {
-        if(isExistUser(session))
-            this.users.remove(session);
+    public User removeUser(Session session) {
+        User user = searchUser(session);
+        this.users.remove(session);
+        return user;
+
     }
 
     @Override
