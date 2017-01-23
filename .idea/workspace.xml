@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2f01f1b4-3859-4cb6-abd9-9868868be18b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Chat.java" afterPath="$PROJECT_DIR$/src/main/java/Chat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MainChannel.java" afterPath="$PROJECT_DIR$/src/main/java/MainChannel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Cookies.java" afterPath="$PROJECT_DIR$/src/main/java/Cookies.java" />
     </list>
     <ignored path="WebChat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Chat.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Chat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Chat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+            <state relative-caret-position="340">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#659#660#0" expanded="true" />
@@ -97,8 +96,8 @@
       <file leaf-file-name="ChatWebSocketHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ChatWebSocketHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="425">
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,14 +137,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cookies.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Cookies.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Cookies.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+            <state relative-caret-position="255">
+              <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
               <folding>
-                <element signature="e#334#335#0" expanded="true" />
-                <element signature="e#361#362#0" expanded="true" />
+                <element signature="e#402#403#0" expanded="true" />
+                <element signature="e#472#473#0" expanded="true" />
+                <element signature="e#525#526#0" expanded="true" />
+                <element signature="e#598#599#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ChatWebSocketHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/JSONWeatherReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Cookies.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/BotChannel.java" />
         <option value="$PROJECT_DIR$/src/main/java/IChannel.java" />
@@ -195,6 +195,7 @@
         <option value="$PROJECT_DIR$/src/main/java/UserChannel.java" />
         <option value="$PROJECT_DIR$/src/main/java/MainChannel.java" />
         <option value="$PROJECT_DIR$/src/main/java/Chat.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Cookies.java" />
       </list>
     </option>
   </component>
@@ -727,7 +728,14 @@
       <option name="project" value="LOCAL" />
       <updated>1485205764603</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="chat methods, websocet methods rewritten in chat class, need to implement cookies handler&#10;">
+      <created>1485211390681</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1485211390681</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -782,7 +790,8 @@
     <MESSAGE value="cookies methoes, almost finished bot channel&#10;main channel&#10;channel map&#10;void methodes in user channel&#10;changes in interface" />
     <MESSAGE value="bot channel finished" />
     <MESSAGE value="user channel" />
-    <option name="LAST_COMMIT_MESSAGE" value="user channel" />
+    <MESSAGE value="chat methods, websocet methods rewritten in chat class, need to implement cookies handler&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="chat methods, websocet methods rewritten in chat class, need to implement cookies handler&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1092,17 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Cookies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/IChannel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1116,16 +1114,6 @@
         <state relative-caret-position="340">
           <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ChatWebSocketHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1187,12 +1175,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Chat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        <state relative-caret-position="340">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#659#660#0" expanded="true" />
             <element signature="e#718#719#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ChatWebSocketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Cookies.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+          <folding>
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#598#599#0" expanded="true" />
           </folding>
         </state>
       </provider>
