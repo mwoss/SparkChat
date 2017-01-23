@@ -28,25 +28,33 @@ public class Channel implements IChannel{
     }
     @Override
     public void addUser(Session session, User user) {
-
+        this.users.put(session,user);
     }
 
     @Override
-    public User removeUser(Session session) {
-        return null;
+    public void removeUser(Session session) {
+        if(isExistUser(session))
+            this.users.remove(session);
     }
 
     @Override
     public boolean isExistUser(Session session) {
-        return false;
+        return this.users.containsKey(session);
+    }
+
+    @Override
+    public User searchUser(Session session){
+        return this.users.get(session);
     }
 
     @Override
     public void broadcastMessage(Session session, String message) {
 
     }
+
     @Override
-    public User searchUser(Session session){
-        return null;
+    public boolean removalPermission() {
+        return this.users.isEmpty();
     }
+
 }

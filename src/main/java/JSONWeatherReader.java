@@ -30,10 +30,10 @@ public class JSONWeatherReader {
             System.err.println("Gson or json data error");
         }
         this.data = root;
-        this.weather = getWeatherDiscription(cityName);
+        this.weather = getWeatherDescription(cityName);
 
     }
-    public Weather getWeatherDiscription(String cityName){
+    public Weather getWeatherDescription(String cityName){
         Gson dataRead = new Gson();
         JsonElement weather = data.getAsJsonObject().get("weather").getAsJsonArray().get(0);
         JsonElement temperature = data.getAsJsonObject().get("main");
@@ -46,7 +46,7 @@ public class JSONWeatherReader {
     private String urlLink(String cityName){
         String result="http://api.openweathermap.org/data/2.5/weather?q=";
         result += cityName;
-        result += "&appid=" + this.apiKey;
+        result += "&appid=" + this.apiKey + "&units=metric";
         return result;
     }
     private HttpURLConnection openHttpURLConnection(String str) {

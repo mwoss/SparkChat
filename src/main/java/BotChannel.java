@@ -1,3 +1,5 @@
+import org.eclipse.jetty.websocket.api.Session;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -12,7 +14,7 @@ public class BotChannel extends Channel {
     public BotChannel(){
         super("ChannelBot");
     }
-    private String getHour(){
+    private String getActualTime(){
         String timeStamp = new SimpleDateFormat("HHmmss")
                 .format(Calendar.getInstance().getTime());
         return "Actual time: " + timeStamp;
@@ -24,7 +26,50 @@ public class BotChannel extends Channel {
                 .format(Calendar.getInstance().getTime());
         return "Today is " + dayOfWeek + " " + dataStamp;
     }
-    private String botResponde(){
-        return null;
+    private String botResponde(String msg){
+        String data = msg.trim();
+        switch(data){
+            case "/help":
+                return "Available commends:\n" +
+                        "/time - return actual time\n" +
+                        "/date - return actual date\n" +
+                        "/weather [City Name] - return short weather info about city of your choice";
+            case "/time":
+                return getActualTime();
+            case "/date":
+                return getActualData();
+            case "greeting":
+                return "Hello. I am moobot. To ask me for something use available commands. You might see all by write down \"/help\" in chat";
+            default:
+                if(data.substring(0,8).equals("/weather")){
+                    String city = data.substring(8);
+                    JSONWeatherReader weather = new JSONWeatherReader(city);
+                    return weather.weather.toString();
+                }
+                return "Unknown command, write /help to get all available options";
+        }
+
+    }
+
+    @Override
+    public void addUser(Session session, User user){
+        super.addUser(session,user);
+
+    }
+    @Override
+    public boolean removalPermission(){
+        return false;
+    }
+    @Override
+    public void broadcastMessage(Session session, String message) {
+
+    }
+
+    private void botMessage(Session session, String message){
+
+    }
+
+    private void broadcastMessage(String sender, String msg, Session session){
+
     }
 }

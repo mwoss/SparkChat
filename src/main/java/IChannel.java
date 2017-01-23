@@ -5,8 +5,9 @@ import org.eclipse.jetty.websocket.api.Session;
  */
 public interface IChannel {
     void addUser(Session session, User user);
-    User removeUser(Session session);
+    void removeUser(Session session);
     boolean isExistUser(Session session);
     void broadcastMessage(Session session, String message);
     User searchUser(Session session);
+    boolean removalPermission();
 }
