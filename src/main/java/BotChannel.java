@@ -1,5 +1,8 @@
 import org.eclipse.jetty.websocket.api.Session;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -54,7 +57,7 @@ public class BotChannel extends Channel {
     @Override
     public void addUser(Session session, User user){
         super.addUser(session,user);
-
+        this.botMessage(session,this.botResponde("greeting"));
     }
     @Override
     public boolean removalPermission(){
@@ -62,14 +65,24 @@ public class BotChannel extends Channel {
     }
     @Override
     public void broadcastMessage(Session session, String message) {
-
+        User user = this.searchUser(session);
+        this.broadcastMessageSender(user.nickName,message,session);
+        this.botMessage(session,botResponde(message));
     }
 
     private void botMessage(Session session, String message){
-
+        this.broadcastMessageSender(this.toString(),message,session);
     }
 
-    private void broadcastMessage(String sender, String msg, Session session){
-
+    private void broadcastMessageSender(String sender, String msg, Session session){
+        User user = this.searchUser(session);
+        try{
+            session.getRemote()
+                    .sendString(String.valueOf(new JSONObject()
+                            .put("userMessage",this.createHtmlMessageFromSender(sender,msg))
+                            .put("userList",new String[]{user.nickName})));
+        }catch(IOException | JSONException e){
+            System.err.println("Problem with getRemote or JSON object");
+        }
     }
 }

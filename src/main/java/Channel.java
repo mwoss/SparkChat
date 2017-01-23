@@ -19,7 +19,7 @@ public class Channel implements IChannel{
     }
 
     //Builds a HTML element with a sender-name, a message, and a timestamp,
-    private static String createHtmlMessageFromSender(String sender, String message) {
+    public String createHtmlMessageFromSender(String sender, String message) {
         return article().with(
                 b(sender + " says:"),
                 p(message),
@@ -55,6 +55,10 @@ public class Channel implements IChannel{
     @Override
     public boolean removalPermission() {
         return this.users.isEmpty();
+    }
+    @Override
+    public String toString(){
+        return this.channelName;
     }
 
 }
