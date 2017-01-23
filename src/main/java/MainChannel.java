@@ -3,6 +3,6 @@
  */
 public class MainChannel extends Channel{
     public MainChannel(){
-        super(Main.mainChannelName); // cos tam xD
+        super("MainChannel"); // cos tam xD
     }
 }
