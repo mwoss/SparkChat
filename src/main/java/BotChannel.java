@@ -17,11 +17,13 @@ public class BotChannel extends Channel {
     public BotChannel(){
         super("ChannelBot");
     }
+
     private String getActualTime(){
         String timeStamp = new SimpleDateFormat("HHmmss")
                 .format(Calendar.getInstance().getTime());
         return "Actual time: " + timeStamp;
     }
+
     private String getActualData(){
         String dataStamp = new SimpleDateFormat("yyyyMMdd")
                 .format(Calendar.getInstance().getTime());
@@ -29,8 +31,9 @@ public class BotChannel extends Channel {
                 .format(Calendar.getInstance().getTime());
         return "Today is " + dayOfWeek + " " + dataStamp;
     }
+
     private String botResponde(String msg){
-        String data = msg.trim();
+        String data = msg.replaceAll("\\s+","");
         switch(data){
             case "/help":
                 return "Available commends:\n" +
@@ -46,6 +49,8 @@ public class BotChannel extends Channel {
             default:
                 if(data.substring(0,8).equals("/weather")){
                     String city = data.substring(8);
+                    System.err.println(data);
+                    System.err.println(city);
                     JSONWeatherReader weather = new JSONWeatherReader(city);
                     return weather.weather.toString();
                 }
@@ -71,7 +76,7 @@ public class BotChannel extends Channel {
     }
 
     private void botMessage(Session session, String message){
-        this.broadcastMessageSender(this.toString(),message,session);
+        this.broadcastMessageSender(this.chName(),message,session);
     }
 
     private void broadcastMessageSender(String sender, String msg, Session session){

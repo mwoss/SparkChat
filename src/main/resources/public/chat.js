@@ -1,11 +1,21 @@
-//Establish the WebSocket connection and set up event handlers
-var webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/chat/");
+webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/chat/");
 webSocket.onmessage = function (msg) { updateChat(msg); };
-webSocket.onclose = function () { alert("WebSocket connection closed") };
+webSocket.onclose = function () {
+    alert("Connection closed");
+    logOut();
+};
 
 //Send message if "Send" is clicked
 id("send").addEventListener("click", function () {
     sendMessage(id("message").value);
+});
+
+id("log out").addEventListener("click", function () {
+    logOut();
+});
+
+id("menu").addEventListener("click", function () {
+    goMenu();
 });
 
 //Send message if enter is pressed in the input field
@@ -25,18 +35,8 @@ function sendMessage(message) {
 function updateChat(msg) {
     var data = JSON.parse(msg.data);
     insert("chat", data.userMessage);
-    id("userlist").innerHTML = "";
+    id("userList").innerHTML = "";
     data.userlist.forEach(function (user) {
-        insert("userlist", "<li>" + user + "</li>");
+        insert("userList", "<li>" + user + "</li>");
     });
-}
-
-//Helper function for inserting HTML as the first child of an element
-function insert(targetId, message) {
-    id(targetId).insertAdjacentHTML("afterbegin", message);
-}
-
-//Helper function for selecting element by id
-function id(id) {
-    return document.getElementById(id);
 }

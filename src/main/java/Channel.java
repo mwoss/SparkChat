@@ -11,7 +11,7 @@ import static j2html.TagCreator.*;
  * Created by Matthew on 2017-01-13.
  */
 public class Channel implements IChannel{
-    private String channelName;
+    private final String channelName;
     Map<Session,User> users = new ConcurrentHashMap<>();
 
     public Channel(String channelName){
@@ -58,6 +58,11 @@ public class Channel implements IChannel{
     public boolean removalPermission() {
         return this.users.isEmpty();
     }
+
+    public String chName(){
+        return this.channelName;
+    }
+
     @Override
     public String toString(){
         return this.channelName;

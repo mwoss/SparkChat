@@ -2,16 +2,17 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WebsSockets</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+    <script src="/cookies.js"></script>
+    <script src="/insertHTML.js"></script>
 </head>
 <body>
-    <div id="chatControls">
-        <input id="message" placeholder="Type your message">
-        <button id="send">Send</button>
-    </div>
-    <ul id="userlist"> <!-- Built by JS --> </ul>
-    <div id="chat">    <!-- Built by JS --> </div>
-    <script src="websocketDemo.js"></script>
+<form name="login_form" action="/menu.html"
+      onsubmit="return validateForm()" method="post">
+    Username: <input type="text" name="username">
+    <input type="submit" value="Log In">
+</form>
+<script src="/log.js"></script>
+
 </body>
 </html>

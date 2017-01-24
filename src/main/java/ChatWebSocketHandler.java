@@ -5,6 +5,7 @@ import org.eclipse.jetty.websocket.api.annotations.*;
 public class ChatWebSocketHandler {
 
     Chat newChat = new Chat();
+
     @OnWebSocketConnect
     public void onConnect(Session session) throws Exception {
         this.newChat.onConnectSession(session);
