@@ -15,7 +15,7 @@ public class UserChannel extends Channel{
     @Override
     public void addUser(Session session, User user){
         super.addUser(session,user);
-        this.serverMessage(user.nickName + "joined the channel");
+        this.serverMessage(user.nickName + " joined the channel");
 
     }
     @Override
@@ -44,7 +44,7 @@ public class UserChannel extends Channel{
     @Override
     public User removeUser(Session session){
         User user = super.removeUser(session);
-        this.serverMessage(user.nickName + "left channel");
+        this.serverMessage(user.nickName + " left channel");
         return user;
     }
 

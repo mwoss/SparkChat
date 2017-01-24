@@ -36,7 +36,7 @@ function updateChat(msg) {
     var data = JSON.parse(msg.data);
     insert("chat", data.userMessage);
     id("userList").innerHTML = "";
-    data.userlist.forEach(function (user) {
+    data.userList.forEach(function (user) {
         insert("userList", "<li>" + user + "</li>");
     });
 }
