@@ -22,9 +22,9 @@ public class Weather {
     public String toString(){
         return "Actual weather in " + this.cityName +
                 " description: " + this.info +
-                " | temperature: " + this.temp +
-                " | pressure: " + this.pressure +
-                " | humidity: " + this.humidity;
+                " | temperature: " + this.temp + "°C" +
+                " | pressure: " + this.pressure + "hPa" +
+                " | humidity: " + this.humidity + "%";
     }
 }
 

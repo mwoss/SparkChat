@@ -10,7 +10,7 @@ import static j2html.TagCreator.*;
 /**
  * Created by Matthew on 2017-01-13.
  */
-public class Channel implements IChannel{
+public abstract class Channel implements IChannel{
     private final String channelName;
     Map<Session,User> users = new ConcurrentHashMap<>();
 
@@ -36,9 +36,7 @@ public class Channel implements IChannel{
         User user = searchUser(session);
         this.users.remove(session);
         return user;
-
     }
-
     @Override
     public boolean isExistUser(Session session) {
         return this.users.containsKey(session);
@@ -47,11 +45,6 @@ public class Channel implements IChannel{
     @Override
     public User searchUser(Session session){
         return this.users.get(session);
-    }
-
-    @Override
-    public void broadcastMessage(Session session, String message) {
-
     }
 
     @Override

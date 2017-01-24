@@ -19,13 +19,13 @@ public class BotChannel extends Channel {
     }
 
     private String getActualTime(){
-        String timeStamp = new SimpleDateFormat("HHmmss")
+        String timeStamp = new SimpleDateFormat("HH:mm:ss")
                 .format(Calendar.getInstance().getTime());
         return "Actual time: " + timeStamp;
     }
 
     private String getActualData(){
-        String dataStamp = new SimpleDateFormat("yyyyMMdd")
+        String dataStamp = new SimpleDateFormat("yyyy/MM/dd")
                 .format(Calendar.getInstance().getTime());
         String dayOfWeek = new SimpleDateFormat("EEEE", Locale.ENGLISH)
                 .format(Calendar.getInstance().getTime());
@@ -47,10 +47,8 @@ public class BotChannel extends Channel {
             case "greeting":
                 return "Hello. I am moobot. To ask me for something use available commands. You might see all by write down \"/help\" in chat";
             default:
-                if(data.substring(0,8).equals("/weather")){
+                if(data.length() >= 8 && data.substring(0,8).equals("/weather")){
                     String city = data.substring(8);
-                    System.err.println(data);
-                    System.err.println(city);
                     JSONWeatherReader weather = new JSONWeatherReader(city);
                     return weather.weather.toString();
                 }
