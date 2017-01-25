@@ -22,8 +22,23 @@ input {
 
 button {
     float: right;
+    margin: 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 11px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    border: 1px solid green
 }
-
+button:hover{
+    background-color: #3d8e40;
+    color:white;
+}
 li {
     margin: 5px 0;
 }
